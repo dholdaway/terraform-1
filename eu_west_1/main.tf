@@ -26,6 +26,12 @@ resource "aws_instance" "test_instance" {
   ami           = "ami-08ca3fed11864d6bb"
   instance_type = "t2.medium"
   key_name = "test_terraform"
+
+  network_interface {
+    network_interface_id = aws_network_interface.network_interface.id
+    device_index         = 0
+  }
+
   user_data = file("server_build.sh")
 }
 
