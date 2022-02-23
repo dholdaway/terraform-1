@@ -12,8 +12,8 @@ variable "aws_secret_access_key" {
   sensitive   = true
 }
 
-variable "vpc_id" {
-  description = "ID of the VPC that we are building EC2 instances in"
+variable "subnet_id" {
+  description = "ID of the Subnet that we are building EC2 instances in"
   type        = string
   sensitive   = true
 }
