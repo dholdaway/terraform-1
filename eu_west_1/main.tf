@@ -4,8 +4,10 @@ provider "aws" {
   access_key = var.aws_access_key
   secret_key = var.aws_secret_access_key
   region     = "eu-west-1"
+}
 
-  backend "s3" {
+terraform {
+    backend "s3" {
     bucket = var.state_bucket
     key    = var.state_key
     region = "eu-west-1"
