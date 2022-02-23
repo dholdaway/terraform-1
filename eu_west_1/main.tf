@@ -6,13 +6,13 @@ provider "aws" {
   region     = "eu-west-1"
 }
 
-# terraform {
-#     backend "s3" {
-#     bucket = var.state_bucket
-#     key    = var.state_key
-#     region = "eu-west-1"
-#   }
-# }
+terraform {
+    backend "s3" {
+    bucket = "oasislmf-terraform"
+    key    = "eu-west-1/terraform.tfstate"
+    region = "eu-west-1"
+  }
+}
 
 
 resource "aws_network_interface" "network_interface" {
@@ -27,7 +27,7 @@ resource "aws_network_interface" "network_interface" {
 resource "aws_instance" "test_instance" {
   ami           = "ami-08ca3fed11864d6bb"
   instance_type = "t2.medium"
-  key_name = "test_terraform"
+  key_name = "OasisProject"
 
   network_interface {
     network_interface_id = aws_network_interface.network_interface.id
