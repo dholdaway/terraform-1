@@ -31,7 +31,7 @@ def main() -> None:
 
     continue_running = input("please type 'yes': ")
     if continue_running == "yes":
-        init_terraform = Popen(f'cd {file_path}/{config["location"]} && terraform init')
+        init_terraform = Popen(f'cd {file_path}/{config["location"]} && terraform init', shell=True)
         init_terraform.wait()
         run_terraform = Popen(command, shell=True)
         run_terraform.wait()
