@@ -20,6 +20,7 @@ setup(
        "console_scripts": [
            "terra-apply=command_engine.run_terra:main",
            "terra-destroy=command_engine.destroy_terra:main",
+           "terra-install=command_engine.install_terraform:main"
         ]
    },
 )
