@@ -30,4 +30,15 @@ variables:
 ```
 The ```location``` is where the terraform project is located in the root of the module. For instance, this terraform 
 project is rooted in the ```command_engine/eu_west_1``` directory in this repo. The ```variables``` are then 
-passed into the terraform program that is being run. 
+passed into the terraform program that is being run. To run the terraform program run the command below:
+```commandline
+terra-apply
+```
+
+## Deleting infrastructure 
+If you need to delete the infrastructure of a project, we will need a ```terra_config.yml``` in the directory of where 
+we are running the command. This can be seen in the creating infrastructure section. We can then delete the 
+project from the cloud with the command below:
+```commandline
+terra-destroy
+```
