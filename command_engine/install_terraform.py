@@ -13,8 +13,9 @@ def main() -> None:
     """
     shell_directory: str = f"{str(Path(__file__).parent)}/scripts/install_terraform.sh"
 
+    # change the permissions of the bash script that installs terraform
     change_permissions_process = subprocess.Popen(f"chmod +x {shell_directory}", shell=True)
     change_permissions_process.wait()
 
-    print("installing terraform")
+    # run the bash script that installs terraform
     subprocess.call(shell_directory)
